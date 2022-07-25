@@ -2,7 +2,7 @@ function Footer() {
     return (
         <>
             <div className="footer-wrap">
-                FOOTER
+                <h3>0/4 CONCLUÍDOS</h3>
             </div>
         </>
     )

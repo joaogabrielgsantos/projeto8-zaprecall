@@ -7,8 +7,6 @@ function App (){
         <>
         <BoasVindas visible = {visible} setVisible = {setVisible}/>
         <TelaRecall visible = {visible} setVisible = {setVisible} />
-        
-        
         </>
     )
 }
