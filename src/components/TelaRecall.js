@@ -1,9 +1,8 @@
 import React from "react";
-import Topo from "./Topo";
-import Footer from "./Footer";
-import Flashcards from "./FlashCards";
-import Card from "./Card";
-import Pergunta from "./Pergunta";
+import Topo from "./Topo/Topo";
+import Footer from "./Footer/Footer";
+import Card from "./Card/Card";
+import Pergunta from "./Pergunta/Pergunta";
 
 
 
@@ -14,26 +13,42 @@ const recalls = [
     { question: "Podemos colocar __ dentro do JSX", answer: "expressões" }
 ]
 
-const dataRecall = recalls.map(recall => {
-    return { ...recall, selecionada: false, virada: false }
-})
 
 
 function TelaRecall({ visible }) {
     
-
     const [selecionada, setSelecionada] = React.useState(false)
 
+  
+
+    
+    function Flashcards({children}) {
+        
+
+        console.log(`Essa é a virada: ${selecionada}`)
+
+    
+            return (
+                <ul onClick={()=>setSelecionada(true)}>
+                    {children}
+                </ul>
+            )
+       
+    }
+    
+    
+   
+  
 
 
     return (
         <>
             <div className={!visible ? "container" : "hidden"}>
                 <Topo />
-                {dataRecall.map((recall, index) => {
+                {recalls.map((recall, index) => {
                     return (
                         <Flashcards key = {index}>
-                            {!selecionada ? <Card index={index} selecionada={recall.selecionada} setSelecionada={setSelecionada} /> : <Pergunta index={index} question={recall.question} answer ={recall.answer} />}
+                            {selecionada ? <Pergunta index={index} question={recall.question} answer ={recall.answer}/> : <Card index={index} /> }
                         </Flashcards>
                     )
                 })}

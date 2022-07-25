@@ -1,0 +1,18 @@
+.logo-wrap h1 {
+    width: 203px;
+    height: 44px;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 45px;
+    align-items: center;
+    letter-spacing: -0.012em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.logo-wrap img {
+    width: 52px;
+    height: 60px;
+}
